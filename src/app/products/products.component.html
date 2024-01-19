@@ -1,0 +1,9 @@
+<h2>Products List</h2>
+<hr/>
+<div class="row row-cols-1 row-cols-md-3 g-5">
+    @for(product of products; track product.id ; let i = $index){
+        <div class="col">
+            <app-product-card [productItem]="product" ></app-product-card>
+        </div>
+    }
+</div>

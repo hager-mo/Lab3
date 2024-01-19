@@ -1,0 +1,27 @@
+<!-- (click)="redirectToDetails(productItem.id) -->
+<div class="card h-100">
+    <img [src]="productItem.thumbnail" class="card-img-top" [alt]="productItem.title" />
+    <div class="card-body">
+      @if(productItem.stock){
+      <span class="badge text-bg-success">In stock</span>
+      } @else {
+      <span class="badge text-bg-danger">out of stock</span>
+      }
+      <h5
+        class="card-title"
+        [ngClass]="productItem.favorite ? 'favorite_text' : 'text-danger'"
+      >
+        {{productItem.title}}
+      </h5>
+      <div class="d-flex justify-content-between">
+        <span>{{productItem.price}} EGP</span>
+        <span>{{productItem.rating}}/5</span>
+      </div>
+      <div class="d-flex ">
+        <button type="button" class="btn btn-danger">Add to Cart</button>
+        <button class="btn btn-success mx-2" (click)="redirectToDetails(productItem.id)">Redirect to details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- {{productItem.id}} -->
